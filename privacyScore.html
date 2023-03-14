@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">The Dark Side of the Internet</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+                            <form onsubmit="submitLoginForm(event)">
+                                <h2>How often do you use social media?</h2>
+                                <input type="checkbox" id="social1" name="social1" value="0">
+                                <label for="social1"> Never</label><br>
+                                <input type="checkbox" id="social2" name="social2" value="1">
+                                <label for="social2"> ~7 hrs/week</label><br>
+                                <input type="checkbox" id="social3" name="social3" value="2">
+                                <label for="social3"> ~21 hrs/week</label><br>
+                                <input type="checkbox" id="social4" name="social4" value="3">
+                                <label for="social4"> ~35 hrs/week</label><br>
+                                <input type="checkbox" id="social5" name="social5" value="4">
+                                <label for="social5"> 40+ hrs/week</label><br>
+                                
+                                <h2>How often do you use Google Search?</h2>
+                                <input type="checkbox" id="search1" name="search1" value="0">
+                                <label for="search1"> Never</label><br>
+                                <input type="checkbox" id="search2" name="search2" value="1">
+                                <label for="search2"> ~7 hrs/week</label><br>
+                                <input type="checkbox" id="search3" name="search3" value="2">
+                                <label for="search3"> ~21 hrs/week</label><br>
+                                <input type="checkbox" id="search4" name="search4" value="3">
+                                <label for="search4"> ~35 hrs/week</label><br>
+                                <input type="checkbox" id="search5" name="search5" value="4">
+                                <label for="search5"> 40+ hrs/week</label><br>
+
+                                <h2>How often do you use your phone?</h2>
+                                <input type="checkbox" id="phone1" name="phone1" value="0">
+                                <label for="phone1"> Never</label><br>
+                                <input type="checkbox" id="phone2" name="phone2" value="1">
+                                <label for="phone2"> ~7 hrs/week</label><br>
+                                <input type="checkbox" id="phone3" name="phone3" value="2">
+                                <label for="phone3"> ~21 hrs/week</label><br>
+                                <input type="checkbox" id="phone4" name="phone4" value="3">
+                                <label for="phone4"> ~35 hrs/week</label><br>
+                                <input type="checkbox" id="phone5" name="phone5" value="4">
+                                <label for="phone5"> 40+ hrs/week</label><br>
+
+                                <h2>How often do you use random websites?</h2>
+                                <input type="checkbox" id="website1" name="website1" value="0">
+                                <label for="website1"> Never</label><br>
+                                <input type="checkbox" id="website2" name="website2" value="1">
+                                <label for="website2"> ~7 hrs/week</label><br>
+                                <input type="checkbox" id="website3" name="website3" value="2">
+                                <label for="website3"> ~21 hrs/week</label><br>
+                                <input type="checkbox" id="website4" name="website4" value="3">
+                                <label for="website4"> ~35 hrs/week</label><br>
+                                <input type="checkbox" id="website5" name="website5" value="4">
+                                <label for="website5"> 40+ hrs/week</label><br>
+
+                                
+                                <input type="submit" value="Submit">
+                            </form>
+						</div>
+
+                        <script type="text/javascript">
+
+                            function submitLoginForm(event){
+                                event.preventDefault();
+                                let arrSocial = [event.target['social1'].checked,event.target['social2'].checked,event.target['social3'].checked, event.target['social4'].checked, event.target['social5'].checked]
+                                let arrSearch = [event.target['search1'].checked,event.target['search2'].checked,event.target['search3'].checked, event.target['search4'].checked, event.target['search5'].checked]
+                                let arrPhone = [event.target['phone1'].checked,event.target['phone2'].checked,event.target['phone3'].checked, event.target['phone4'].checked, event.target['phone5'].checked]
+                                let arrWebsite = [event.target['website1'].checked,event.target['website2'].checked,event.target['website3'].checked, event.target['website4'].checked, event.target['website5'].checked]
+                                //1, 2, 3, 4, 5
+                                let totalScore = 0;
+                                for(var i = 0; i < arrSocial.length; i++){
+                                    console.log(arrSocial[i])
+                                    if(arrSocial[i]){
+                                        totalScore += i + 1
+                                    }
+                                    if(arrSearch[i]){
+                                        totalScore += i + 1
+                                    }
+                                    if(arrPhone[i]){
+                                        totalScore += i + 1
+                                    }
+                                    if(arrWebsite[i]){
+                                        totalScore += i + 1
+                                    }
+                                }
+
+                                if(totalScore < 5){
+                                    alert("Privacy Score: EXCELLENT\nYou are virtually anonymous!")
+                                }else if(totalScore < 10){
+                                    alert("Privacy Score: GOOD\nCompanies know about you, but not too much.")
+                                }else if(totalScore < 14){
+                                    alert("Privacy Score: MEDIOCRE\nYour data is getting sold, but within reason.")
+                                }else if(totalScore < 20){
+                                    alert("Privacy Score: CONCERNING\nSome corporations might know you better than your friends")
+                                }else{
+                                    alert("Privacy Score: BAD\nThe internet knows too much about you and you have almost no privacy :(\nData including location, personal information, connections, hobbies, and more are available to the highest bidder.")
+                                }
+                            }
+                        </script>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

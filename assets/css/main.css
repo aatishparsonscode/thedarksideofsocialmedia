@@ -2560,7 +2560,15 @@ input, select, textarea {
 				}
 
 /* Image */
-
+	.imageCreator {
+		border-radius: 0.25em;
+		border: 0;
+		display: inline-block;
+		position:relative;
+		max-height: fit-content;
+		max-width: 20px;
+	}
+	
 	.image {
 		border-radius: 0.25em;
 		border: 0;
@@ -3907,3 +3915,5 @@ input, select, textarea {
 			}
 
 		}
+
+		
